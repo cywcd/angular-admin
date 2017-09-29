@@ -1,0 +1,76 @@
+
+<!-- header-->
+<ng-include src="'tpl/inc/header.html'"></ng-include>
+
+<!-- content -->
+<section class="frameview" ng-controller="IndexCtrl">
+    <style>
+        .index-table th,.index-table td{ border-top:0px!important; text-align: center;}
+        .index-table tr,.index-table tr{border-bottom:1px solid #e7eaec !important; display:block;}
+        .index-table tr:last-child,.index-table tr:last-child{border-bottom:0px !important;}
+    </style>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">我的代办</h3>
+                    </div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">管理后台</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table index-table">
+                                <tr ng-controller="IndexBossNavCtrl" ng-repeat="i in bossNavData" >
+                                    <th>{{i.name}}</th>
+                                    <td ng-repeat="j in i.list"><a ui-sref="{{j.url?j.url:false}}">{{j.name}}</a></td>
+                                </tr>
+                            </table>
+                            <div class="tc">
+                                <a class="btn btn-info" ui-sref="boss.watter-business-type">立即进入</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">业务后台</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table index-table">
+                                <tr ng-controller="IndexBusinessNavCtrl" ng-repeat="i in businessNavData" >
+                                    <th>{{i.name}}</th>
+                                    <td ng-repeat="j in i.list"><a ui-sref="{{j.url?j.url:false}}">{{j.name}}</a></td>
+                                </tr>
+                            </table>
+                            <div class="tc">
+                                <a class="btn btn-info" ui-sref="city-choose">立即进入</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<!-- /content -->
+
+<!-- footer-->
+<div class="page-footer" ng-include="'tpl/inc/footer.html'"></div>

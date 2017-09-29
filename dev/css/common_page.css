@@ -1,0 +1,51 @@
+@charset "utf-8";
+/*表格组件*/
+.table-bordered{border:1px solid #EBEBEB;background:#fff;}
+.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{background-color:#F5F5F6;}
+.table-bordered>tbody>tr>td,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>td,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{border:1px solid #e7e7e7}
+.table>thead>tr>th{border-bottom:1px solid #DDD}
+.table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th,.table>thead>tr>td,.table>thead>tr>th{border-top:1px solid #e7eaec;line-height:1.42857;padding:8px;vertical-align:middle; word-break:break-all; word-wrap:break-word; min-width:40px;}
+.table-bordered thead{background:#f9fafb;}
+.td_i,.td_a{cursor:pointer; color:#6d40fd;}
+
+/*下拉*/
+.selectbox{width:160px;}
+.inputbox{width:160px; display:inline-block;}
+
+
+.pageContent{ padding: 30px 20px;}
+.pagetitle{ font-size:1.5rem; border-bottom: #ccc solid 1px; margin-top: -5px; margin-bottom: 20px; padding-bottom: 12px; color: #7266ba; display: block; width:100%;}
+.btn.btn-default.form-control{ width: 190px;}
+.btn-place{ padding: 20px 0px;}
+.table-wrapper{ width: 100%; overflow-x: auto;}
+input[type="text"],select.form-control{ width:190px!important;}
+.modal{ z-index: 998;}
+.conbox .btn.btn-default.form-control{ width:100% !important;}
+
+.list-group-item{width:100%;}
+.list-group-item li{border:1px solid #ddd;}
+.labelcheckbox{display: inline-block; vertical-align:middle; margin:0 5px 0 20px !important;}
+.labelspan{display: inline-block; vertical-align:middle; margin:0 5px 0 0 !important;}
+
+/*标题组*/
+.conboxh2{width: 100%;  float: left; font-size:1.5rem; color: #ee6f20; border-bottom: 1px solid #ccc; margin-bottom:15px; padding:0 15px 12px;}
+.conboxh2 em{line-height:20px; margin-top:20px;}
+.conboxh3{width: 100%;  float: left; border-bottom: 1px solid #eee; margin:25px 0 15px; padding:10px 15px;}
+
+/*图片缩略图*/
+.img_thumb{max-width:100px; max-height:60px;}
+
+/*返回顶部*/
+.backtop{width:57px; height:57px; position:fixed; right:30px; bottom:10%; background:url(img/common/icon_backtop.png) center 0 no-repeat #bfc1c6;}
+
+/*操作文字类*/
+.operation{cursor:pointer; color:#6d40fd; margin-left:20px;}
+
+/* bootstrap well */
+.well.well-info{background-color:#fdfdfd;}
+
+/* select组件宽度 */
+.ui-select-width.input,.ui-select-width, .ui-select-width .btn, .ui-select-width input{min-width:200px; box-sizing: border-box;}
+/* table 内容不折行 */
+.nowrap-table td, .nowrap-table th{white-space: nowrap !important;}
+input[type="text"].double-width-input {width:394px !important;}

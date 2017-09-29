@@ -1,0 +1,115 @@
+<div class="express-dealt pageContent" ng-controller="watterTimeoutCtrl">
+
+    <div class="pagetitle">超时订单记录</div>
+
+    <div class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control ui-select-width" placeholder="订单编号">
+        </div>
+        <div class="form-group ui-select-width">
+            <ui-select ng-model="statu.selected" >
+                <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in status | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="form-group ui-select-width">
+            <ui-select ng-model="statu.selected" >
+                <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in status | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+
+    <div class="form-inline mt20">
+        <div class="form-group ui-select-width">
+            <ui-select ng-model="statu.selected" >
+                <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in status | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="form-group ui-select-width">
+            <ui-select ng-model="statu.selected" >
+                <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in status | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="form-group ui-select-width">
+            <ui-select ng-model="statu.selected" >
+                <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in status | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+
+    <div class="form-inline mt20">
+        <div class="form-group ui-select-width">
+            <ui-select ng-model="statu.selected" >
+                <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in status | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-info">清空</button>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-info mr10">查询</button>
+        </div>
+    </div>
+
+    <div class="table-responsive mt20">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>订单类型</th>
+                <th>城市</th>
+                <th>区域</th>
+                <th>所属网点</th>
+                <th>提交时间</th>
+                <th>状态</th>
+                <th>领单人</th>
+                <th>等待时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>BJ00001</td>
+                <td>凯旋豪庭</td>
+                <td>北京</td>
+                <td>东城区</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>2</td>
+                <td>4</td>
+                <td>4</td>
+                <td><a ui-sref="boss.organization-network-detail">查看设置</a> <a ui-sref="boss.organization-network-deployed">人员调派</a></td>
+            </tr>
+            <tr>
+                <td>BJ00001</td>
+                <td>凯旋豪庭</td>
+                <td>北京</td>
+                <td>东城区</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>2</td>
+                <td>4</td>
+                <td>4</td>
+                <td><a ui-sref="boss.organization-network-detail">查看设置</a> <a ui-sref="boss.organization-network-deployed">人员调派</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

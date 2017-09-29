@@ -1,0 +1,86 @@
+<div class="conbox" ng-controller="organizationNetworkCtrl">
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-1 control-label">省市区</label>
+        <div class="row col-sm-9">
+            <location-cascading cascading-location="cascadingLocation(args)"></location-cascading>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-1 control-label">网点类型</label>
+            <div class="col-sm-3">
+                <ui-select ng-model="networktype.selected">
+                    <ui-select-match placeholder="请选择网点类型">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in networktype | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-1 control-label">网点状态</label>
+        <div class="col-sm-3">
+            <ui-select ng-model="networkstatu.selected">
+                <ui-select-match placeholder="请选择网点状态">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in networkstatu | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-1 control-label">查询条件</label>
+        <div class="col-sm-6">
+            <input  ng-model="data.queryStr" class="form-control" type="text" placeholder="请输入网点编号、名称或电话来查询网点">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" class="btn btn-info" ng-click="getData()">查询</button>
+        </div>
+    </div>
+
+    <d-table model-api="getProviderList">
+        <table  class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>网点编号</th>
+                <th>网点名称</th>
+                <th>所属城市</th>
+                <th>所属城区</th>
+                <th>所属片区</th>
+                <th>所属督导辖区</th>
+                <th>服务小区数量</th>
+                <th>网点类型</th>
+                <th>网点状态</th>
+                <th>网点地址</th>
+                <th>网点电话</th>
+                <th>员工数量</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="(index,row) in tableData">
+                <td ng-bind="row.providerCode"></td>
+                <td ng-bind="row.providerName"></td>
+                <td ng-bind="row.dscd"></td>
+                <td ng-bind="row.dsnm"></td>
+                <td ng-bind="row.dsnm"></td>
+                <td ng-bind="row.dsnm"></td>
+                <td ng-bind="row.communitySize"></td>
+                <td ng-bind="row.scaleDesc"></td>
+                <td ng-bind="row.statusDesc"></td>
+                <td ng-bind="row.contactAddress"></td>
+                <td ng-bind="row.contactPhone"></td>
+                <td ng-bind="row.dsnm"></td>
+                <td>
+                    <a ui-sref="boss.organization-network-detail">查看设置</a>
+                    <a ui-sref="boss.organization-network-deployed">人员调派</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </d-table>
+
+</form>
+</div>

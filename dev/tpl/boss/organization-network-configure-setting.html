@@ -1,0 +1,114 @@
+<div class="conbox">
+    <h2 class="conboxh2">
+        <em class="pull-left">网点配置设置</em> <button class="btn btn-info pull-right" ui-sref="boss.organization-network-detail">返回</button>
+    </h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-1 control-label">省市区</label>
+            <div class="col-sm-3">
+                <select class="form-control" name="" id="province">
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>河北</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <select class="form-control" name="" id="city">
+                    <option>北京市</option>
+                    <option>上海市</option>
+                    <option>承德市</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <select class="form-control" name="" id="city">
+                    <option>朝阳区</option>
+                    <option>上海</option>
+                    <option>承德</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-1 control-label">小区名称</label>
+            <div class="col-sm-6">
+                <input class="form-control" type="text" placeholder="请输入小区名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <button type="submit" class="btn btn-info">查询</button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>小区名称</th>
+                    <th>所属城市</th>
+                    <th>所属城区</th>
+                    <th>小区地址</th>
+                    <th>服务网点</th>
+                    <th>所属商圈</th>
+                    <th>小区管理方式</th>
+                    <th>物业名称</th>
+                    <th>物业电话</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>凯旋丽舍</td>
+                    <td>北京</td>
+                    <td>东城区</td>
+                    <td>凯旋路188号</td>
+                    <td>凯旋豪庭</td>
+                    <td>凯旋</td>
+                    <td>封闭</td>
+                    <td>华泰</td>
+                    <td>010-61234567</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>凯旋丽舍</td>
+                    <td>北京</td>
+                    <td>东城区</td>
+                    <td>凯旋路188号</td>
+                    <td>凯旋豪庭</td>
+                    <td>凯旋</td>
+                    <td>封闭</td>
+                    <td>华泰</td>
+                    <td>010-61234567</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-info"> 添加小区</button>
+            </div>
+        </div>
+        <ul class="col-sm-12 itembox mb20">
+            <li class="col-sm-10">
+                <label class="control-label">已添加小区：</label>
+                <p class="form-control-static">凯旋丽舍</p><span class="control-label del">删除</span>
+            </li>
+            <li class="col-sm-2">
+                <span class="control-label del">全部删除</span>
+            </li>
+            <li class="col-sm-12">
+                <label class="control-label">服务网点数量：</label>
+                <p class="form-control-static">2</p>
+            </li>
+         </ul>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-info">取消</button>
+                <button type="button" class="btn btn-info ml20">确定</button>
+            </div>
+        </div>
+    </form>
+</div>

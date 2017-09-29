@@ -1,0 +1,72 @@
+<div class="express-dealt p15" ng-controller="expressSettlementCtrl">
+    <unfinished-order></unfinished-order>
+
+    <div class="row">
+        <div class="form-horizontal form-group">
+            <label class="col-sm-1 control-label">快递公司</label>
+            <div class="col-sm-3">
+                <select class="form-control" name="" id="province">
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>河北</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-info mb20 mt20">查询</button>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-info mb10">新增费用结算</button>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>订单号</th>
+                <th>快递公司</th>
+                <th>支付时间</th>
+                <th>结算时间段</th>
+                <th>应收</th>
+                <th>实收</th>
+                <th>支付方式</th>
+                <th>结算备注</th>
+                <th>订单状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>BJ00001</td>
+                <td>凯旋豪庭</td>
+                <td>北京</td>
+                <td>东城区</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>2</td>
+                <td>旗舰店</td>
+                <td>4</td>
+                <td><a ui-sref="boss.organization-network-detail">查看设置</a> <a ui-sref="boss.organization-network-deployed">人员调派</a></td>
+            </tr>
+            <tr>
+                <td>BJ00001</td>
+                <td>凯旋豪庭</td>
+                <td>北京</td>
+                <td>东城区</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>2</td>
+                <td>旗舰店</td>
+                <td>4</td>
+                <td><a ui-sref="boss.organization-network-detail">查看设置</a> <a ui-sref="boss.organization-network-deployed">人员调派</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

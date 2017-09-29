@@ -1,0 +1,89 @@
+<div class="conbox">
+    <h2 class="conboxh2">
+        <em class="pull-left">修改片区</em> <button class="btn btn-info pull-right" ui-sref="boss.organization-institution-district-list">返回</button>
+    </h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">所属城市：</label>
+            <div class="col-sm-3">
+                <p class="form-control-static">北京市-朝阳区</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">片区负责人：</label>
+            <div class="col-sm-6">
+                <p class="form-control-static">
+                    <i class="mr5">赵一</i>
+                    <span class="control-label operation">修改</span>
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">片区名称：</label>
+            <div class="col-sm-6">
+                <input class="form-control" type="text" placeholder="请输入片区名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <button type="submit" class="btn btn-info">查询</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">添加督导辖区：</label>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>督导辖区名称</th>
+                    <th>督导负责人</th>
+                    <th>负责人电话</th>
+                    <th>辖区网点</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>孙一辖区</td>
+                    <td>孙一</td>
+                    <td>13888889999</td>
+                    <td>网点一 ，网点二 ，网点三 ，网点四，网点五</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>孙一辖区</td>
+                    <td>孙一</td>
+                    <td>13888889999</td>
+                    <td>网点一 ，网点二 ，网点三 ，网点四，网点五</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-info"> 添加</button>
+            </div>
+        </div>
+        <ul class="col-sm-12 itembox mb20">
+            <li class="col-sm-10">
+                <label class="control-label">已添加督导辖区：</label>
+                <p class="form-control-static">督导辖区1</p><span class="control-label del">删除</span>
+            </li>
+            <li class="col-sm-2">
+                <span class="control-label del">全部删除</span>
+            </li>
+        </ul>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-info">取消</button>
+                <button type="button" class="btn btn-info ml20">提交</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,118 @@
+<div class="express-dealt pageContent" ng-controller="expressDealtCtrl">
+    <div class="pagetitle">代办处理</div>
+    <unfinished-order></unfinished-order>
+    <div class="form-inline mb20">
+        <div class="form-group mr10">
+            <ui-select ng-model="expressCompanies.selected">
+                <ui-select-match placeholder="快递公司">{{$select.selected.expressName}}</ui-select-match>
+                <ui-select-choices  repeat="item in expressCompanies | filter: $select.search">
+                    <span ng-bind-html="item.expressName | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <div class="form-group mr10">
+            <ui-select ng-model="isSmsNotice.selected" >
+                <ui-select-match placeholder="短信发送状态">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in isSmsNotice | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <div class="form-group mr10">
+            <ui-select ng-model="expressPartition.selected">
+                <ui-select-match placeholder="分区">{{$select.selected.areaName}}</ui-select-match>
+                <ui-select-choices  repeat="item in expressPartition | filter: $select.search">
+                    <span ng-bind-html="item.areaName | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="form-group">
+            <ui-select ng-model="expressWorkers.selected">
+                <ui-select-match placeholder="领单人">{{$select.selected.respName}}</ui-select-match>
+                <ui-select-choices  repeat="item in expressWorkers | filter: $select.search">
+                    <span ng-bind-html="item.respName | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+
+    <div class="form-inline mb20">
+        <div class="form-group mr10">
+            <ui-select ng-model="expressStatus.selected" ng-disabled="data.EXPRESS.switch == 'NO'" >
+                <ui-select-match placeholder="包裹状态">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices  repeat="item in expressStatus | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <input type="text" class="form-control" placeholder="入库时间">
+        <label class="control-label">至</label>
+        <input type="text" class="form-control">
+    </div>
+
+    <div class="form-inline">
+        <input type="text" ng-model="searchContent.keyword" class="form-control mr10 double-width-input" placeholder="快递单号或者收件人号码或房间号">
+        <button type="button" class="btn btn-info" ng-click="queryData();">查询</button>
+    </div>
+
+    <div class="mt30 well well-sm well-info">
+        <button ng-click="expressOperationSelfSign();" type="button" class="btn btn-info">自提签收</button>
+        <button type="button" class="btn btn-info m10">寄存标记</button>
+        <button type="button" class="btn btn-info m10">设定预约时间</button>
+        <button type="button" class="btn btn-info m10">发送短信</button>
+        <button type="button" class="btn btn-info m10">派单</button>
+        <button type="button" class="btn btn-info m10">退回快递</button>
+        <button type="button" class="btn btn-info m10">确认丢件</button>
+    </div>
+
+    <d-table model-api="lynExpressQueryListToBeDone" >
+        <table  class="table table-bordered table-hover nowrap-table">
+            <thead>
+            <tr>
+                <th class="text-center"><input ng-model="isAllChecked.status" type="checkbox"></th>
+                <th>快递单号</th>
+                <th>快递公司</th>
+                <th>收件人手机号</th>
+                <th>房间号</th>
+                <th>用户地址</th>
+                <th>分区</th>
+                <th>包裹状态</th>
+                <th>入库时间</th>
+                <th>预约时间</th>
+                <th>短信发送状态</th>
+                <th>短信发送次数</th>
+                <th>领单人</th>
+                <th>查看</th>
+            </tr>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="(index,row) in tableData">
+                <td class="text-center"><input ng-model="row.isChecked" type="checkbox"></td>
+                <td ng-bind="row.bill"></td>
+                <td ng-bind="row.expressName"></td>
+                <td ng-bind="row.receiverPhone"></td>
+                <td ng-bind="row.roomNumber"></td>
+                <td ng-bind="row.receiverAddress"></td>
+                <td ng-bind="row.areaName"></td>
+                <td ng-if="row.status == 'STORAGE'">已入库</td>
+                <td ng-if="row.status == 'APPOINTMENT'">已预约</td>
+                <td ng-if="row.status == 'TAKEN'">已领单</td>
+                <td ng-if="row.status == 'SIGNED'">已签收</td>
+                <td ng-if="row.status == 'DEPOSIT'">寄存</td>
+                <td ng-bind="row.storeTime.split(' ')[0] + ' ' +row.storeTime.split(' ')[1].substring(0,5)"></td>
+                <td class="red" ng-bind="row.deliveryBookTime.split(' ')[0] + ' ' +
+                                         row.deliveryBookTime.split(' ')[1].substring(0,5) +
+                                         '~' + row.deliveryBookEndTime.split(' ')[1].substring(0,5)"></td>
+                <td ng-if="row.isSmsNotice">已发送</td>
+                <td ng-if="!row.isSmsNotice">未发送</td>
+                <td ng-bind="row.sendSmsCnt"></td>
+                <td ng-bind="row.deliverResponser"></td>
+                <td> <a ng-click="modify(row);">查看</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </d-table>
+</div>

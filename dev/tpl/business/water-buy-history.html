@@ -1,0 +1,39 @@
+<div class="container-fluid pageContent" ng-controller="WatterBuyHistoryCtrl">
+    <style>
+        .form-group{padding: 0 20px 20px 0;}
+    </style>
+    <div class="pagetitle">购买记录 </div>
+    <div class="form-inline">
+        <div class="form-group">
+            用户编号：2001
+        </div>
+        <div class="form-group">
+            手机号：13800138000
+        </div>
+        <div class="form-group">
+            品牌：哇哈哈
+        </div>
+        <div class="form-group">
+            商品名称：哇哈哈
+        </div>
+    </div>
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+        <th>购买订单编号</th><th>用户手机号</th><th>销售管家</th><th>卡劵编号</th><th>卡劵名称</th><th>卡劵售价</th><th>卡劵数量</th><th>提交时间</th><th>状态</th><th>支付时间</th><th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in tabledata">
+            <td ng-repeat="cell in row">
+                {{cell}}
+            </td>
+            <td>
+                <a ui-sref="business.water-appointment-detail">详情</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

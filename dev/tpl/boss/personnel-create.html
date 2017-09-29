@@ -1,0 +1,109 @@
+<div class="container-fluid pageContent" ng-controller="PersonnelCreateCtrl">
+    <style>
+        .center-detail-table{ margin: 20px;}
+        .center-detail-table td{ padding-top: 15px;}
+        .choose-area .btn.btn-default.form-control{height: 100px;}
+        .choose-area input{height: 100px;}
+        .ui-select-multiple,.ui-select-multiple>div,.ui-select-multiple .ui-select-match,.ui-select-multiple input{ height: 100px; width: 300px;}
+        .ui-select-bootstrap,
+        .ui-select-bootstrap button,
+        .ui-select-bootstrap input,
+        .ui-select-bootstrap ui-select-choices{ width: 190px;}
+        .city-td select{}
+        .f-mr10{ padding: 3px 8px;}
+
+    </style>
+    <div class="pagetitle" ng-hide="urldata.id">创建员工 </div>
+    <div class="pagetitle" ng-show="urldata.id">修改员工 </div>
+    <table class="center-detail-table">
+        <tr>
+            <td>姓名：</td>
+            <td>
+                <input type="text" class="form-control"  placeholder="">
+            </td>
+            <td class="pl50">员工状态：</td>
+            <td>
+                <ui-select ng-model="status.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.value}}</ui-select-match>
+                    <ui-select-choices  repeat="status in statusList | filter: $select.search">
+                        <span ng-bind-html="status.value | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>登录账号：</td>
+            <td>
+                <input type="text" class="form-control"  placeholder="">
+            </td>
+            <td class="pl50">所在城市：</td>
+            <td colspan="3" style="width: 650px">
+                <location-cascading></location-cascading>
+            </td>
+
+        </tr>
+        <tr>
+            <td>角色：</td>
+            <td>
+                <ui-select ng-model="role.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.roleName}}</ui-select-match>
+                    <ui-select-choices  repeat="role in roleList | filter: $select.search">
+                        <span ng-bind-html="role.roleName | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td class="pl50">站点名称：</td>
+            <td>
+                <ui-select ng-model="provider.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.providerName}}</ui-select-match>
+                    <ui-select-choices  repeat="provider in getProviderList | filter: $select.search">
+                        <span ng-bind-html="provider.providerName | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>数据范围：</td>
+            <td colspan="6">
+                <textarea disabled id="data-textarea" cols="50" rows="6"></textarea>
+                <div><a ng-click="citydialog.showLayer()">请选择数据范围</a></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="6" class="tc" >
+                <button type="button" class="btn btn-info mt50" ng-click="submit()">提交</button>
+            </td>
+        </tr>
+    </table>
+
+    <d-dialog call-back="dialogCallBack"  dialog-title="请选择数据范围" dialog-width="600" dialog-id="citydialog" default-btn="">
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-8">
+                <div class="checkbox">
+                <label class="f-mr10" ng-repeat="province in provinceList">
+                    <input type="checkbox" ng-checked="allsheng" name="sheng" value="{{province.dscd}}">{{province.dsnm}}
+                </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-8">
+                <div class="checkbox">
+                    <label class="f-mr10">
+                        <input type="checkbox" id="allsheng" ng-model="allsheng"> 全选
+                    </label>
+                </div>
+            </div>
+        </div>
+    </d-dialog>
+
+</div>

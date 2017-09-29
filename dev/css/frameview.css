@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+/*aside*/
+.frameview{ width:100%; position:absolute; top:109px; bottom:0; z-index:100;}
+.aside{ position:fixed; z-index:102; top:100px; bottom:0; background:#34383b; overflow-x: hidden;}
+.aside_nav{width:150px; display:inline-block;}
+.aside_nav{ float:left;}
+.aside_nav ul{ width:100%; float:left;}
+.aside_nav ul li{ width:100%; float:left; vertical-align:middle; border-bottom:1px solid #152fb5;}
+.aside_nav ul li:last-child{border:none;}
+.aside_nav ul li a{width:100%; height:100%; display:inline-block; color:#fff;}
+.aside_nav ul li a:hover{ font-size:16px; color:#fff;}
+.aside_nav ul li span{ width:28px; height:24px; margin:0 10px 0 16px; display:inline-block; vertical-align:middle;}
+.aside_nav ul li i{display:inline-block; vertical-align:middle; font:normal 16px/50px "\5FAE\8F6F\96C5\9ED1";  color:#fff;}
+
+
+.frameview_con{ position:absolute; left:158px; top:0; right:0; bottom:9px; overflow:hidden; overflow-y:auto; z-index:102;  }
+.con_container{ margin:4px 9px 36px 0; padding:0 10px 30px;background:#fff; word-break:break-all; word-wrap:break-word;}
+
+/*public*/
+body{background:#f3f7fa !important;}
+::-webkit-input-placeholder { color:#99a1a7;}
+input:-moz-placeholder { color:#99a1a7;}
+.conbox{width: 100%; padding: 0 15px;  float: left; margin-top:30px;}
+.conbox .col-sm-1{min-width:100px;}
+.conbox .col-sm-w1{min-width:130px; float:left;}
+.i_deployed,.i_td{color:#007788; cursor:pointer; margin:0 5px; }
+
+
+.itembox{width:100%;}
+.itembox .control-label{float:left;}
+.itembox .form-control-static{float:left;}
+.maxw_img{max-width:240px;}
+.del{color:red; display:inline-block; vertical-align:middle; margin:0 15px 0 5px; cursor:pointer; }
+
+/*header*/
+.header{width:100%; min-width:800px; height:100px; background:#fff; position:fixed; z-index:101;}
+.headerbox{padding:0 20px 0 22px;}
+.logo{ width:298px; height:100px; margin:0; background:url(../img/common/logo.png) 0 center no-repeat; float:left; text-indent:-99999px;}
+.headinfo dl{ height:100px; margin:0; float: right;}
+.headinfo dl dd{ height:100px; display:inline-block;float:left; font:normal 14px/22px "\5FAE\8F6F\96C5\9ED1"; color:#aca9a8;}
+.headinfo dl dd a.iconBtn{display:inline-block; padding-top:50px; text-align:center;}
+.messagebox{width:215px; display:inline-block; vertical-align:middle; margin:20px 0 0 30px; padding:0 0 0 15px; border-left: 1px solid #eeeeee;}
+.icon01{min-width:32px; margin-left: 12px; background:url(../img/common/icon_home.png) center center no-repeat; cursor: pointer;}
+.icon02{min-width:27px; margin-left: 12px; background:url(../img/common/icon_edit.png) center center no-repeat; cursor: pointer;}
+.icon03{width:52px; height:52px; margin-top:22px; border-radius:50%;  opacity:0.8;}
+.message_info{display:inline-block; width:100%;}
+.txt_edit{display:inline-block; width:100%; color:#6d40fd; cursor: pointer;}
+.txt_edit:hover{color:#6d40fd;}
+
+.aside_menu { overflow:auto; width:100%; background:#34383b; font:14px/1.5 Tahoma,Arial,sans-serif}
+.aside_menu ul{ list-style:none; margin:0; padding:0;}
+.aside_menu ul li{   white-space:nowrap; }
+.aside_menu ul li h2{ cursor:pointer; height:100%; width:100%; font:14px/50px '\5FAE\8F6F\96C5\9ED1'; color:#fff; background:#7266ba; text-indent:35px;}
+.aside_menu ul li a{ display:block; outline:none; height:50px; font:14px/50px '\5FAE\8F6F\96C5\9ED1'; color:#fff; text-decoration:none;}
+.aside_menu ul li a:hover{ background-color:#424649; background-image:none; font:14px/50px '\5FAE\8F6F\96C5\9ED1';}
+.aside_menu ul .lev_1 li{border:none;}
+.aside_menu ul li.cur a{background:#ffffff; color:#7266ba;}
+.lev_1,.lev_2{display:none;}
+.lev_1 li{text-indent:35px;}
+.lev_1 li .lev_2 li{text-indent:45px;}
+.levicon{  display:inline-block; border:none; vertical-align:middle;}
+.levicon {
+    width:0; 
+    height:0; 
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent; 
+    border-left:9px solid #7266ba; margin-left:-14px; margin-right:5px;
+}
+.levicon.lev_down{
+    width:0; 
+    height:0;
+    border-bottom:none; 
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-top:9px solid #7266ba; margin-left:-14px; margin-right:5px;
+}

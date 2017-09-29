@@ -1,0 +1,137 @@
+<div class="express-dealt p15" ng-controller="expressSendCtrl">
+    <unfinished-order></unfinished-order>
+
+    <div class="row">
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">快递公司</label>
+            <div class="col-sm-8">
+                <select class="form-control" name="" id="province">
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>河北</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-5 control-label">短信发送状态</label>
+            <div class="col-sm-7">
+                <select class="form-control" name="" id="province">
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>河北</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">订单状态</label>
+            <div class="col-sm-8">
+                <select class="form-control" name="" id="province">
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>河北</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-5 control-label">领单人</label>
+            <div class="col-sm-7">
+                <select class="form-control" name="" id="province">
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>河北</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">订单时间</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-1 control-label">至</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12 mb20">
+            <button type="button" class="btn btn-info">查询</button>
+        </div>
+    </div>
+
+    <div class="row mb10">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-info mr20">确认寄出</button>
+            <button type="button" class="btn btn-info mr20">新建订单</button>
+            <button type="button" class="btn btn-info mr20">派单</button>
+            <button type="button" class="btn btn-info">取消订单</button>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>订单号</th>
+                <th>订单时间</th>
+                <th>订单金额</th>
+                <th>快递公司</th>
+                <th>快递单号</th>
+                <th>实际寄件费用</th>
+                <th>寄件类型</th>
+                <th>利润</th>
+                <th>用户手机号</th>
+                <th>用户地址</th>
+                <th>领单人</th>
+                <th>预约时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>BJ00001</td>
+                <td>凯旋豪庭</td>
+                <td>北京</td>
+                <td>东城区</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>2</td>
+                <td>旗舰店</td>
+                <td>已运营</td>
+                <td>北京市西城区金融街188号</td>
+                <td>4</td>
+                <td><a ui-sref="boss.organization-network-detail">查看设置</a> <a ui-sref="boss.organization-network-deployed">人员调派</a></td>
+            </tr>
+            <tr>
+                <td>BJ00001</td>
+                <td>凯旋豪庭</td>
+                <td>北京</td>
+                <td>东城区</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>2</td>
+                <td>旗舰店</td>
+                <td>已运营</td>
+                <td>北京市西城区金融街188号</td>
+                <td>4</td>
+                <td><a ui-sref="boss.organization-network-detail">查看设置</a> <a ui-sref="boss.organization-network-deployed">人员调派</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </form>
+
+
+</div>

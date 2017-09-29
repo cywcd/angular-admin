@@ -1,0 +1,93 @@
+<div class="container-fluid pageContent" ng-controller="WatterBuyListCtrl">
+    <style>
+        .form-group{padding: 0 20px 20px 0;}
+    </style>
+    <div class="pagetitle">购买订单 </div>
+    <div class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control"  placeholder="用户编号">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"  placeholder="用户手机号">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"  placeholder="卡劵名称">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"  placeholder="商品名称">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"  placeholder="卡劵编号">
+        </div>
+    </div>
+    <div class="container-fluid btn-place">
+        
+        <button type="button" class="btn btn-info">查询</button>
+        <button type="button" class="btn btn-info">清空</button>
+        <button type="button" class="btn btn-info" ng-click="addList()">测试添加订单</button>
+    </div>
+    <d-table model-api="listCardByPage" param-name="baseParam">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>购买订单编号</th>
+            <th>用户手机号</th>
+            <th>小区名称</th>
+            <th>房间号</th>
+            <th>销售管家</th>
+            <th>卡劵编号</th>
+            <th>卡劵名称</th>
+            <th>卡劵售价</th>
+            <th>卡劵数量</th>
+            <th>提交时间</th>
+            <th>状态</th>
+            <th>支付时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+         <tr ng-repeat="row in tabledata">
+             <td>
+
+             </td>
+             <td>
+
+             </td>
+             <td>
+
+             </td>
+             <td>
+
+             </td>
+             <td>
+                 {{row.cardName}}
+             </td>
+             <td>
+                 {{row.cardCode}}
+             </td>
+             <td>
+                 {{row.cardName}}
+             </td>
+             <td>
+                 {{row.sellPrice}}
+             </td>
+             <td>
+                 {{row.totalTicket}}
+             </td>
+             <td>
+                 {{row.createTime}}
+             </td>
+             <td>
+
+             </td>
+             <td>
+
+             </td>
+             <td>
+                 <a ui-sref="business.water-buy-detail">详情</a>
+             </td>
+         </tr>
+        </tbody>
+    </table>
+    </d-table>
+</div>

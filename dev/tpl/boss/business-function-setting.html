@@ -1,0 +1,73 @@
+<div class="express-dealt pageContent" ng-controller="businessFunctionSettingCtrl">
+    <div class="pagetitle">业务功能设置</div>
+    <div class="row mt20">
+        <div class="col-sm-10 form-horizontal form-group">
+            <label class="col-sm-1 control-label">地区</label>
+            <div class="row col-sm-9">
+                <location-cascading cascading-location="cascadingLocation(args)"></location-cascading>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10 form-horizontal form-group">
+            <label class="col-sm-1 control-label">网点</label>
+            <div class="col-sm-9 row">
+                <div class="col-sm-4">
+                    <input type="text" ng-model="data.providerName" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info mr20" ng-click="getData();">查询</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <d-table model-api="lynQueryListSite" >
+        <table  class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>地区</th>
+                <th>网点名称</th>
+                <th>快递业务</th>
+                <th>送水业务</th>
+                <th>业务管理</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="(index,row) in tableData">
+                <td ng-bind="row.area"></td>
+                <td ng-bind="row.siteName"></td>
+                <td ng-bind="row.isExpressOn"></td>
+                <td ng-bind="row.providerName"></td>
+                <td>
+                    <a ng-click="modify(row);">设置</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </d-table>
+
+    <d-dialog call-back="dialogCallBack"  dialog-width="600" dialog-id="aa" default-btn="">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 b-r">
+                    <h3 class="text-center"> 请下载员工表格模板 </h3>
+                    <p  class="text-center exclfrm">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <span class="excl">excl表</span>
+                    </p>
+                    <p class="text-center"><a type="button" class="btn btn-info">下载</a></p>
+                </div>
+                <div class="col-xs-6">
+                    <p  class="text-center exclfrm mt">
+                        <span class="glyphicon glyphicon-open"></span>
+                    </p>
+                    <p class="text-center"><a type="button" class="btn btn-info">上传</a></p>
+                </div>
+            </div>
+        </div>
+    </d-dialog>
+
+
+</div>

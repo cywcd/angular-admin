@@ -1,0 +1,32 @@
+<div class="container-fluid pageContent" ng-controller="PersonnelAssignCtrl">
+    <style>
+        .form-group{padding: 0 20px 20px 0;}
+    </style>
+    <div class="pagetitle">人员调派 </div>
+
+    <div class="container-fluid btn-place">
+        <a ui-sref="boss.personnel-manage" class="btn btn-info">返回</a>
+    </div>
+    <d-table model-api="personnelManageList" >
+        <table  class="table table-bordered table-hover" style="width: 1300px;">
+            <thead>
+            <tr>
+                <th>姓名</th><th>手机</th><th>身份</th><th>所在站点</th><th>员工状态</th><th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="(index,row) in tableData">
+                <td> <input type="checkbox"/> {{index+1}}</td>
+                <td ng-repeat="cell in row">
+                    {{cell}}
+                </td>
+                <td>
+                    <a ng-click="modify()">修改</a>
+                    <a>删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </d-table>
+
+</div>

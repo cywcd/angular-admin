@@ -1,0 +1,109 @@
+<div class="conbox" ng-controller="organizationInstitutionAreaAdd">
+    <h2 class="conboxh2">
+        <em class="pull-left">新增督导辖区</em> <button class="btn btn-info pull-right" ui-sref="boss.organization-institution-supervisory-area-list">返回</button>
+    </h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">所属城市：</label>
+            <div class="col-sm-10">
+                <area-select select-area="selectArea(args)"></area-select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">督导辖区负责人：</label>
+            <div class="col-sm-6">
+                <p class="form-control-static">
+                    <i class="mr5"></i>
+                    <span class="control-label operation" ng-click="personAdd.showLayer()">添加</span>
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">督导辖区名称：</label>
+            <div class="col-sm-6">
+                <input ng-model="formResult.areaPopedomName" class="form-control" type="text" placeholder="请输入督导辖区名称" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">添加网点：</label>
+        </div>
+        <div class="form-group">
+                <input class="form-control disinbl ml20" ng-model="tabdata.queryStr" type="text" placeholder="请输入网点编号、名称或电话来查询网点">
+                <button ng-click="getData()" type="button" class="btn btn-info disinbl">查询</button>
+        </div>
+        <d-table model-api="getProviderList">
+            <table  class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>网点编号</th>
+                    <th>网点名称</th>
+                    <th>所属城区</th>
+                    <th>服务小区数量</th>
+                    <th>网点类型</th>
+                    <th>网点状态</th>
+                    <th>网点地址</th>
+                    <th>网点电话</th>
+                    <th>现任站长</th>
+                    <th>站长电话</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(index,row) in tableData">
+                    <td>
+                        <input type="checkbox" ng-model="row.isChecked" />
+                    </td>
+                    <td ng-bind="row.providerCode"></td>
+                    <td ng-bind="row.providerName"></td>
+                    <td ng-bind="row.dsnm"></td>
+                    <td ng-bind="row.communitySize"></td>
+                    <td ng-bind="row.scaleDesc"></td>
+                    <td ng-bind="row.statusDesc"></td>
+                    <td ng-bind="row.contactAddress"></td>
+                    <td ng-bind="row.contactPhone"></td>
+                    <td ng-bind="row.contactPhone"></td>
+                    <td ng-bind="row.headPhone"></td>
+                </tr>
+                </tbody>
+            </table>
+        </d-table>
+        <div class="form-group mt20">
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-info" ng-click = "addAreacon()"> 添加</button>
+            </div>
+        </div>
+        <ul class="col-sm-12 itembox mb20">
+            <li class="col-sm-10">
+                <label class="control-label">已添加网点：</label>
+                <div ng-repeat="(index,row) in returnaddAreacon">
+                    <p class="form-control-static">{{row.name}}</p><span class="control-label del" ng-click="delAreacon($index)">删除</span>
+                </div>
+            </li>
+            <li class="col-sm-2">
+                <span ng-if="returnaddAreacon.length != 0" class="control-label del" ng-click="delAreaconall(returnaddAreacon)">全部删除</span>
+            </li>
+        </ul>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-info ml20" ng-click="sumitData()">提交</button>
+            </div>
+        </div>
+    </form>
+
+    <d-dialog call-back="infoCallBack"  dialog-width="350" dialog-id="personAdd">
+        <div id="page-confirm">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-10">督导辖区负责人:</label>
+                    <div class="col-sm-10">
+                        <ul  class="item-group-list" ng-repeat="(index,row) in tableData">
+                            <li>
+                                <label><input class="labelcheckbox" type="checkbox" ><span class="labelspan"  ng-bind="row.operatorNameStr"></span></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </d-dialog>
+</div>

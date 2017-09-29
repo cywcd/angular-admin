@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<title>大白管家管理后台</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<![endif]-->
+		<!--common start-->
+		<link rel="stylesheet" href="component/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/common_page.css" />
+		<link rel="stylesheet" href="css/frameview.css" />
+		<!--common end-->
+		
+		<!--page start-->
+		<link rel="stylesheet" href="css/isteven-multi-select.css">
+		<!--page end-->
+	</head>
+	<body ng-app="myApp" id="myApp">
+		<!--header start-->
+		<header class="header">
+			<div class="container-fluid headerbox">
+				<h1 class="logo"></h1>
+				<div class="headinfo">
+					<dl>						
+						<dd>
+							<em class="icon01">首页</em>
+						</dd>
+						<dd>
+							<em class="icon02">退出</em>
+						</dd>
+						<dd>
+							<p class="messagebox">
+								<span class="message_info">欢迎您，大白督导：欧阳浩天</span>
+								<a class="txt_edit">修改密码</a>
+							</p>
+							<img class="icon03" src="img/common/icon_pic.png">
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</header>
+		<!--header end-->
+	
+	<!--main start-->
+		<section class="frameview">
+			
+			<!--asdie start-->
+			<aside class="aside">
+				<div class="aside_nav">
+					<div class="aside_menu">
+					  <ul>
+					    <li>
+					      <h2>网点管理</h2>
+					      <ul class="lev_1">
+					        <li>
+					          <a href="http://www.baidu.com">二级菜单</a></li>
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					      </ul>
+					    </li>
+					    <li>
+					      <h2>小区管理</h2>
+					      <ul class="lev_1">
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					      </ul>
+					    </li>
+					    <li>
+					      <h2>流程审批</h2>
+					      <ul class="lev_1">
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					      </ul>
+					    </li>
+					    <li>
+					      <h2>组织结构</h2>
+					      <ul class="lev_1">
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					      </ul>
+					    </li>
+					    <li>
+					      <h2>员工管理</h2>
+					      <ul class="lev_1">
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					      </ul>
+					    </li>
+					    <li>
+					      <h2>业务管理</h2>
+					      <ul class="lev_1">
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					      </ul>
+					    </li>
+					    <li>
+					      <h2>流程审批</h2>
+					      <ul class="lev_1 disbl">
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					        <li>
+					          <a href="javascript:void(0)"><i class="levicon lev_down"></i>二级菜单</a>
+					          <ul class="lev_2 disbl">
+					            <li class="cur">
+					              <a href="javascript:void(0)">三级菜单</a></li>
+					            <li>
+					              <a href="javascript:void(0)">三级菜单</a></li>
+					          </ul>
+					        </li>
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					        <li>
+					          <a href="javascript:void(0)"><i class="levicon"></i>二级菜单</a>
+					          <ul class="lev_2">
+					            <li>
+					              <a href="javascript:void(0)">三级菜单</a></li>
+					            <li>
+					              <a href="javascript:void(0)">三级菜单</a></li>
+					          </ul>
+					        </li>
+					        <li>
+					          <a href="javascript:void(0)">二级菜单</a></li>
+					      </ul>
+					    </li>
+					  </ul>
+					</div>
+				</div>
+			</aside>
+			<!--asdie end-->
+			
+			<div class="frameview_con">
+				<div class="con_container">
+					<div class="row">
+						<div class="col-xs-12">
+							<!--content start-->
+							<div  ng-controller="selectMinimum">
+							
+								<div
+										isteven-multi-select
+									    input-model="modernProvince"
+									    output-model="outputProvince"
+									    button-label="name"
+									    item-label="name"
+									    tick-property="ticked"
+									    selection-mode="single"
+									>
+								</div>
+								
+								<div
+										isteven-multi-select
+									    input-model="modernCity"
+									    output-model="outputCity"
+									    button-label="name"
+									    item-label="name"
+									    tick-property="ticked"
+									    selection-mode="single"
+									>
+								</div>
+								<div
+										isteven-multi-select
+									    input-model="modernCounty"
+									    output-model="outputCounty"
+									    button-label="name"
+									    item-label="name"
+									    tick-property="ticked"
+									    selection-mode="single"
+									>
+								</div>
+							
+							</div>
+							<!--content end-->
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="js/angular.js"></script>
+		<script src="js/isteven-multi-select.js"></script>
+		<script src="js/controller/select-minimum.js"></script>
+	<!--main end-->
+	
+	</body>
+</html>

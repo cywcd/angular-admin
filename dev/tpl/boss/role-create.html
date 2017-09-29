@@ -1,0 +1,47 @@
+<div class="container-fluid pageContent" ng-controller="RoleCreateCtrl">
+    <style>
+        .center-detail-table{ margin: 20px 50px;}
+        .center-detail-table td{ padding: 15px 15px 0 0;}
+        .center-detail-table .tree-title{ vertical-align: top;}
+        .center-detail-table .pt td{padding-top:30px!important;}
+    </style>
+    <div class="pagetitle">创建角色 </div>
+    <table class="center-detail-table">
+        <tr>
+            <td>角色名称：</td>
+            <td>
+                <input type="text" class="form-control"  placeholder="" required>
+            </td>
+        </tr>
+        <tr class="pt">
+            <td class="tree-title">菜单权限：</td>
+            <td>
+                <div class="wrapper-md">
+                    <div class="b-a bg-light dk r r-2x">
+                        <span ng-if="doing_async">...loading...</span>
+                        <abn-tree
+                                tree-data         = "my_data"
+                                tree-control      = "my_tree"
+                                on-select         = "my_tree_handler(branch)"
+                                expand-level      = "2"
+                                initial-selection = "Granny Smith"
+                                icon-leaf         = "fa fa-file-o"
+                                icon-expand       = "fa fa-plus"
+                                icon-collapse     = "fa fa-minus"
+                                >
+                        </abn-tree>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="4" class="tc">
+                <button type="button" class="btn btn-info mt50" ng-click="submit()">提交</button>
+            </td>
+        </tr>
+    </table>
+
+</div>

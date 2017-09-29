@@ -1,0 +1,28 @@
+<div class="conbox">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-1 control-label">选择城市：</label>
+            <div class="col-sm-3">
+                <select class="form-control" name="" id="province">
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>河北</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <select class="form-control" name="" id="city">
+                    <option>北京市</option>
+                    <option>上海市</option>
+                    <option>承德市</option>
+                </select>
+            </div>
+            <p class="col-sm-offset-1 col-sm-10 red mt5">*请您先选择城市，再点击【查看片区】或【查看督导辖区】即可查看对应列表</p>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <button type="button" class="btn btn-info ml20"  ui-sref="boss.organization-institution-district-list">查看片区</button>
+                <button type="button" class="btn btn-info ml20"  ui-sref="boss.organization-institution-supervisory-area-list">查看督导辖区</button>
+            </div>
+        </div>
+    </form>
+</div>

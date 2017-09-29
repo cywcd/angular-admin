@@ -1,0 +1,39 @@
+@charset "utf-8";
+/*表格组件*/
+.table-bordered{border:1px solid #EBEBEB;background:#fff;}
+.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{background-color:#F5F5F6;}
+.table-bordered>tbody>tr>td,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>td,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{border:1px solid #e7e7e7}
+.table>thead>tr>th{border-bottom:1px solid #DDD}
+.table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th,.table>thead>tr>td,.table>thead>tr>th{border-top:1px solid #e7eaec;line-height:1.42857;padding:8px;vertical-align:middle;word-break:break-all; word-wrap:break-word; min-width:60px;}
+.table-bordered thead{background:#f9fafb;}
+.td_i,.td_a{cursor:pointer; color:#6d40fd;}
+
+/*下拉*/
+.selectbox{width:160px;}
+.inputbox{width:160px; display:inline-block;}
+.form-control{box-shadow: none !important; border-color:#eee;}
+
+
+/*返回顶部*/
+.backtop{width:57px; height:57px; padding-top:36px; position:fixed; right:30px; bottom:10%; background:url(../img/common/icon_backtop.png) center 11px no-repeat #bfc1c6; font-size:12px; text-align:center; color:#fff; cursor:pointer;}
+.backtop:hover{background-color:#9b9ca0;}
+
+/*head-nav*/
+.showhead {  margin-right: -10px; background:#f3f7fa;}
+.head-nav { margin-left: -10px; padding-bottom: 5px; background:#f3f7fa;}
+.head-nav>li { float: left; position: relative; margin-right: 4px; }
+.head-nav>li a { display: block; border-top: 3px solid #fff ; width: 183px; height: 42px; background: #fff; box-sizing: border-box; padding-left: 14px; line-height: 39px; font-size: 12px; color: #9b9b9b;}
+.head-nav>li i { position: absolute; top: 15px; right: 12px; color: #a7a7a7;  }
+.head-nav>li.active a { border-top-color: #fe8331; color: #ff8533; }
+.head-nav>li.active:after { display: block; content: ""; width: 100%; height: 5px; background: #fff; position: absolute; left: 0; bottom: -5px; }
+.dropbox { position: relative; width: 31px; height: 30px; background: #fff; margin-left: 1px; margin-top: 12px; }
+.dropbox>span { width: 31px; height: 30px; text-align: center; line-height: 30px; color: #dfdfdf; cursor: pointer; }
+.dropbox>.dropmenu { display: none; z-index: 99; position: absolute; top: 30px; right: 0; border-top: 1px solid #edeeef; background: #fff; padding: 10px 0 21px 0; }
+.dropbox>.dropmenu>li { position: relative; }
+.dropbox>.dropmenu li a { display: block; width: 135px; line-height: 36px; font-size: 14px; color: #aca9a8; box-sizing: border-box; padding-left: 28px; }
+.dropbox>.dropmenu li i { width: 8px; height: 8px; border-radius: 50%; background: #fe8331; position: absolute; top: 50%; margin-top: -4px; left: 15px; display: none;}
+.dropbox>.dropmenu li.active i { display: block; }
+.chosetype { padding-top: 30px; }
+.chosetype span { color: #fff; }
+.chosetype .input-group-btn button { padding: 10px 16px; }
+

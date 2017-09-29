@@ -1,0 +1,36 @@
+<style>
+    .page-wrapper{ width: 100%; line-height:3rem; font-size: 1.3rem; color:#666;padding-top: 10px;}
+    .page-wrapper.row {margin:0;}
+    .page-wrapper .col-xs-2, .page-wrapper .col-xs-3{padding:0;}
+    .page-go-input,.page-per-size{ width: 60px;height: 40px;border: 1px solid #e1e6eb;}
+    .page-go-div{ text-align: right;}
+    .page-oparetions span{display: inline-block; width: 40px; height: 40px;margin-left:4px;background: #e9edf0;line-height: 40px; text-align: center; color: #9099a1; border: 1px solid #e1e6eb;cursor: pointer;}
+    .table-wrapper table{margin: 0!important;}
+</style>
+<div class="table-component-wrapper">
+    <div class="table-wrapper" ng-transclude>
+
+    </div>
+    <div class="page-wrapper row">
+        <div class="col-xs-3 text-left">每页显示
+            <select ng-model="tablePageConfig.numPerPage" ng-change="pageFirst()" class="page-per-size">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+            条数据  共 <span class="total-count">{{pageRes.totalCount}}</span>条
+        </div>
+        <div class="col-xs-4 tc">
+            {{pageRes.currentPage}}/{{pageRes.totalCount/pageRes.numPerPage | number:0}}
+        </div>
+        <div class="col-xs-3 page-oparetions text-right">
+            <span class="glyphicon glyphicon-step-backward page-first" ng-click="pageFirst()"></span>
+            <span class="glyphicon glyphicon-chevron-left page-prev" ng-click="pagePrev()"></span>
+            <span class="glyphicon glyphicon-chevron-right page-next" ng-click="pageNext()"></span>
+            <span class="glyphicon glyphicon-step-forward page-last" ng-click="pageLast()"></span>
+        </div>
+        <div class="col-xs-2 page-go-div text-right">
+            跳转到 <input type="number" class="page-go-input" ng-model="goPage" ng-keyup="pageGo()"/>
+        </div>
+    </div>
+</div>

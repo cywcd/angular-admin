@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        textarea{ width: 400px; height: 300px; border: 3px solid #000000; overflow:scroll;}
+        button{ width: 100px; height: 50px; font-size: 40px;}
+    </style>
+</head>
+<body>
+<textarea>
+
+</textarea>
+<button id="getArr">getArr</button>
+<button id="getTh">getTh</button>
+<script>
+    document.querySelector('#getArr').onclick = function(){
+        var str = document.querySelector('textarea').value;
+        str = str.replace(/\s+/g,' ');
+        var arrstr = str.split(' ');
+        console.log(arrstr);
+    }
+    document.querySelector('#getTh').onclick = function(){
+        var str = document.querySelector('textarea').value;
+        str = str.replace(/\s+/g,' ');
+        var arrstr = str.split(' ');
+        arrstr.forEach(function(s,i){
+            arrstr[i] = '<th>'+s+'</th>';
+        })
+        console.log(arrstr.join(''));
+    }
+
+    function o(arr){
+        var  o = {}
+        arr.forEach(function(v,i){
+            o[i] = v;
+        });
+        console.log(o);
+        return o;
+    }
+
+
+</script>
+</body>
+</html>

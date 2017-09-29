@@ -1,0 +1,29 @@
+<div class="row mt20" ng-controller="expressPartitionSettingCtrl">
+    <div class="col-sm-12">
+        <button type="button" class="btn btn-info mb10">新增费用结算</button>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>分区名称</th>
+            <th>分区状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>A模板名称</td>
+            <td>正常</td>
+            <td><a ui-sref="boss.organization-network-detail">冻结</a></td>
+        </tr>
+        <tr>
+            <td>B模板名称</td>
+            <td>已冻结</td>
+            <td><a ui-sref="boss.organization-network-detail">恢复</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

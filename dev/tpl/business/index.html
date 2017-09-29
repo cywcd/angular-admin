@@ -1,0 +1,29 @@
+<!-- header-->
+<ng-include src="'tpl/inc/header.html'"></ng-include>
+
+<!-- content -->
+<section class="frameview">
+
+
+    <!--asdie start-->
+    <ng-include src="'tpl/business/nav.html'"></ng-include>
+    <!--asdie end-->
+
+    <div class="frameview_con">
+        <div class="con_container">
+            <div class="row">
+                <div class="col-xs-12" ui-view>
+                    <!--content start-->
+                    此处为主体部分
+                    <!--content end-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- /content -->
+
+<!-- footer-->
+<div class="page-footer" ng-include="'tpl/inc/footer.html'"></div>

@@ -1,0 +1,90 @@
+<div class="container-fluid pageContent" ng-controller="WatterDepositBackCtrl">
+    <style>
+        .water-detail-table{ margin: 20px auto;}
+        .water-detail-table td{ padding-top: 15px;}
+    </style>
+    <div class="pagetitle">新增退押金申请
+        <button type="button" class="btn btn-info pull-right mt-15">取消</button>
+        <button type="button" class="btn btn-info pull-right mt-15 mr15">保存</button>
+    </div>
+
+    <table class="water-detail-table">
+        <tr>
+            <td>选择小区：</td>
+            <td>
+                <ui-select ng-model="statu.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td class="pl50">选择品牌：</td>
+            <td>
+                <ui-select ng-model="statu.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+        </tr>
+        <tr>
+            <td>输入手机号：</td>
+            <td>
+                <input type="text" class="form-control"  placeholder="">
+            </td>
+            <td class="pl50">选择商品：</td>
+            <td>
+                <ui-select ng-model="statu.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+        </tr>
+        <tr>
+            <td>输入房间号：</td>
+            <td>
+                <input type="text" class="form-control"  placeholder="">
+            </td>
+            <td class="pl50">领单管家：</td>
+            <td>
+                <ui-select ng-model="statu.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td class="pl50">回桶数：</td>
+            <td>
+                <input type="text" class="form-control"  placeholder="">
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td class="pl50">坏桶数：</td>
+            <td>
+                <input type="text" class="form-control"  placeholder="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="tc">
+                <button type="button" class="btn btn-info mt50 mr20">保存</button>
+                <button type="button" class="btn btn-info mt50">取消</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+</div>

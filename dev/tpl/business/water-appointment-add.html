@@ -1,0 +1,93 @@
+<div class="container-fluid pageContent" ng-controller="WatterAppointmentAddCtrl">
+    <style>
+       .center-detail-table{ margin: 20px;}
+       .center-detail-table td{ padding-top: 15px;}
+    </style>
+    <div class="pagetitle">新增预约订单
+        <button type="button" class="btn btn-info pull-right mt-15">取消</button>
+        <button type="button" class="btn btn-info pull-right mt-15 mr15">保存</button>
+    </div>
+
+    <table class="center-detail-table">
+        <tr>
+            <td>选择小区：</td>
+            <td>
+                <ui-select ng-model="community.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="community in communityList | filter: $select.search">
+                        <span ng-bind-html="community.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td class="pl50">手机号码：</td>
+            <td>
+                <input type="text" class="form-control" ng-model="userPhone"  placeholder="">
+            </td>
+
+        </tr>
+        <tr>
+            <td>房间号：</td>
+            <td>
+                <input type="text" class="form-control" ng-model="roomNum"  placeholder="">
+            </td>
+            <td class="pl50">地址：</td>
+            <td>
+                <input type="text" class="form-control" ng-model="address"  placeholder="">
+            </td>
+
+        </tr>
+        <tr>
+            <td>预约时间：</td>
+            <td>
+                <div class="form-group">
+                    <input class="form-control" type="text" date-time ng-model="dates.start"  view="hours" date-change="changeDate">
+                    </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" date-time ng-model="dates.end"  view="hours" date-change="changeDate">
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>商品名称：</td>
+            <td>
+                <ui-select ng-model="product.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="product in productList | filter: $select.search">
+                        <span ng-bind-html="product.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td class="pl50">送水数量：</td>
+            <td>
+                <input type="text" class="form-control" ng-model="userCardIds"  placeholder="">
+            </td>
+        </tr>
+        <tr>
+            <td>领单管家：</td>
+            <td>
+                <ui-select ng-model="guanjia.selected" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="guanjia in guanjiaList | filter: $select.search">
+                        <span ng-bind-html="guanjia.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td class="pl50">备注：</td>
+            <td>
+                <input type="text" class="form-control"  placeholder="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="tc">
+                <button type="button" class="btn btn-info mt50 mr20" ng-click="submit()">保存</button>
+                <button type="button" class="btn btn-info mt50">取消</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+</div>

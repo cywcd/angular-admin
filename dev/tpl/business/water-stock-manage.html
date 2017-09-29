@@ -1,0 +1,58 @@
+<div class="container-fluid pageContent" ng-controller="WatterStockManageCtrl">
+    <style>
+        .form-group {
+            padding: 0 20px 20px 0;
+        }
+    </style>
+    <div class="pagetitle">客户库存管理 </div>
+    <div class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="用户编号">
+        </div>
+        <div class="form-group">
+            <ui-select ng-model="statu.selected">
+                <ui-select-match placeholder="品牌名称">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="item in status | filter: $select.search">
+                    <span ng-bind-html="item.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-info">查询</button>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-info">清空</button>
+        </div>
+
+    </div>
+
+    <table class="table table-striped m-b-none display nowrap width-table">
+        <thead>
+        <tr>
+            <th>用户编号</th>
+            <th>手机号码</th>
+            <th>品牌</th>
+            <th>商品名称</th>
+            <th>累计购水总数</th>
+            <th>累计送水数</th>
+            <th>累计余票量</th>
+            <th>累计回桶数</th>
+            <th>坏桶数</th>
+            <th>押桶数</th>
+            <th>当前可退桶数</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="(index,row) in tabledata">
+            <td ng-repeat="cell in row">
+                {{cell}}
+            </td>
+            <td>
+                <a ui-sref="business.water-buy-history">购买详情</a>
+                <a ui-sref="business.water-send-history">送水详情</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

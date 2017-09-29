@@ -1,0 +1,39 @@
+<div class="conbox">
+    <h2 class="conboxh2">
+        <em class="pull-left">网点属性设置</em> <button class="btn btn-info pull-right" ui-sref="boss.organization-network-detail">返回</button>
+    </h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">网点类型：</label>
+            <div class="col-sm-3">
+                <select class="form-control" name="" id="networkType">
+                    <option>请选择网点类型</option>
+                    <option>旗舰店</option>
+                    <option>普通店</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">网点状态：</label>
+            <div class="col-sm-8">
+                <p class="form-control-static fl">筹备中</p>
+                <button type="button" class="btn btn-info ml20"  >设置为【已运营】</button>
+            </div>
+            <p class="col-sm-offset-w col-sm-10 red">网点状态只能更改一次，并且仅能从【筹备中】更改为【已运营】，请谨慎操作！</p>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-w1 control-label">正式运营时间：</label>
+            <div class="col-sm-8">
+                <p class="form-control-static fl">2016年3月16日  09:00:01</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-10">
+                    <button type="button" class="btn btn-info"  >取消</button>
+                    <button type="button" class="btn btn-info ml20"  >确定</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

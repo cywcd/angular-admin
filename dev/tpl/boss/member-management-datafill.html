@@ -1,0 +1,73 @@
+<div class="conbox" ng-controller="MemberManagementDatafill">
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-1 control-label">资料项</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12 mb20">
+                <a role="button" class="btn btn-info">查询</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12 mb20">
+                <a role="button" class="btn btn-info" ng-click="confirmadd.showLayer()">添加</a>
+            </div>
+        </div>
+        <div class="form-group table-responsive col-sm-3">
+                <table class="table table-bordered text-center">
+                    <tbody>
+                    <tr>
+                        <td class="col-sm-6">资料项</td>
+                        <td class="col-sm-6">操作</td>
+                    </tr>
+                    <tr>
+                        <td>年龄</td>
+                        <td><a ng-click="confirm.showLayer()" class="blue">冻结</a></td>
+                    </tr>
+                    <tr>
+                        <td>职业</td>
+                        <td><a ng-click="confirm.showLayer()" class="blue">冻结</a></td>
+                    </tr>
+                    <tr>
+                        <td>工作日出行规律</td>
+                        <td><a ng-click="confirm.showLayer()" class="blue">冻结</a></td>
+                    </tr>
+                    <tr>
+                        <td>节假日出行规律</td>
+                        <td><a ng-click="confirm.showLayer()" class="blue">冻结</a></td>
+                    </tr>
+                    <tr>
+                        <td>年收入</td>
+                        <td><a ng-click="confirm.showLayer()" class="blue">恢复</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+    <d-dialog call-back="confirmCallBack"  dialog-width="200" dialog-id="confirm" >
+        <div id="page-confirm">
+            <h4 class="text-center">您确定冻结此项吗？</h4>
+        </div>
+    </d-dialog>
+
+    <d-dialog call-back="confirmCallBack2"  dialog-width="400" dialog-id="confirm2" >
+        <div id="page-confirm">2222</div>
+    </d-dialog>
+    <d-dialog call-back="confirmCallBack3"  dialog-width="350" dialog-id="confirmadd" >
+        <div id="page-confirm">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">资料项</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </d-dialog>
+</div>

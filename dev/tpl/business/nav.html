@@ -1,0 +1,23 @@
+<aside class="aside" >
+    <div class="aside_nav">
+        <div class="aside_menu" >
+            <ul id="nav-ul" d-nav>
+                <li  ng-controller="NavCtrl" ng-repeat="i in businessNavData" finish-render >
+                    <h2>{{i.name}}</h2>
+                    <ul class="lev_1">
+                        <li ng-repeat="j in i.list">
+
+                            <a ui-sref="{{j.url?j.url:false}}" ng-if="!j.list">{{j.name}}</a>
+
+                            <a href="javascript:void(0)" ng-if="!!j.list" class="j_hasSub"><i class="levicon"></i>{{j.name}}</a>
+
+                            <ul class="lev_2">
+                                <li ng-repeat="k in j.list"><a ui-sref="{{k.url?k.url:false}}">{{k.name}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>

@@ -1,0 +1,147 @@
+<div class="pageContent" ng-controller="businessCommissionExpressCtrl">
+
+    <div class="pagetitle">快递业务提成</div>
+
+    <tabs class-name="nav nav-tabs mt20">
+        <pane title="送件提成">
+            <div class="mt20 well well-info">
+                <button ng-disabled="!data.switch" type="button" class="btn btn-info">添加</button>
+
+                <div class="row">
+                    <div class="table-responsive mt20 col-sm-6">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>解体级别</th>
+                                <th>件数区间</th>
+                                <th>单件提成</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>0至50</td>
+                                <td>1</td>
+                                <td><a>修改</a> | <a href="">删除</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-inline mt20">
+                    <label>站长送件提成设置</label>
+                    <div>
+                        <span class="mr5 mb10">站内管家整体提成百分比</span>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="输入百分比" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2">%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </pane>
+        <pane title="自提提成">
+            <div class="mt20 well well-info well well-info">
+                <button ng-disabled="!data.switch" type="button" class="btn btn-info">添加</button>
+                <div class="row">
+                    <div class="table-responsive mt20 col-sm-6">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>解体级别</th>
+                                <th>件数区间</th>
+                                <th>单件提成</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>0至50</td>
+                                <td>1</td>
+                                <td><a>修改</a> | <a href="">删除</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-inline mt20">
+                    <label>站长自提提成设置</label>
+                    <div>
+                        <span class="mr5 mb10">站内管家整体提成百分比</span>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="0" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2">%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </pane>
+        <pane title="寄件提成">
+            <div class="row  well well-info mt20">
+                <div class="form-inline col-sm-5">
+                    <label>管家寄件提成设置</label>
+                    <div>
+                        <span class="mr5 mb10">站内管家整体提成百分比</span>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="0" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-inline mt20 col-sm-5">
+                    <label>站长寄件提成设置</label>
+                    <div>
+                        <span class="mr5 mb10">站内管家整体提成百分比</span>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="0" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2">%</span>
+                        </div>
+                    </div>
+                </div>
+                <button ng-disabled="!data.switch" type="button" class="btn btn-info mt30">保存</button>
+            </div>
+        </pane>
+        <pane title="全国快递公司管理">
+            <div class="well well-info  mt20">
+                <div class="row">
+                    <div class="col-sm-10 form-horizontal form-group">
+                        <label class="col-sm-1 control-label">网点</label>
+                        <div class="col-sm-9 row">
+                            <div class="col-sm-4">
+                                <input type="text" ng-model="data.providerName" class="form-control">
+                            </div>
+                            <div class="col-sm-8">
+                                <button type="button" class="btn btn-info mr20">查询</button>
+                                <button type="button" class="btn btn-info mr20">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button ng-disabled="!data.switch" type="button" class="btn btn-info mb20 mt20">添加</button>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>快递公司名称</th>
+                            <th>logo</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>测试快递</td>
+                            <td>大白网点</td>
+                            <td>未失效</td>
+                            <td><a ui-sref="boss.business-function-setting-details">修改</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </pane>
+    </tabs>
+
+</div>

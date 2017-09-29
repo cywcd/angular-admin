@@ -1,0 +1,310 @@
+<div class="express-dealt pageContent" ng-controller="businessFunctionSettingDetailsCtrl">
+    <style>
+        .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+            color: #fff;
+            background-color: #fe8331;
+            border-color: #fe7418;
+        }
+    </style>
+    <div class="pagetitle">当前编辑对象：{{currentSite}} <button type="button" class="btn btn-info pull-right mt-15" back-button>返回</button></div>
+
+    <tabs class-name="nav nav-tabs mt20">
+
+        <pane title="快递业务">
+            <tabs class-name="nav nav-pills mt20">
+                <pane title="业务开关">
+                    <div class="well well-info mt20">
+                        <div class="checkbox mb20">
+                            <label>
+                                <input type="checkbox" ng-model="data.EXPRESS.switch" ng-true-value="'YES'" ng-false-value="'NO'"> 业务开关
+                            </label>
+                        </div>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label class="mr10">运营方式</label>
+                                <ui-select ng-model="status.selected" ng-disabled="data.EXPRESS.switch == 'NO'" >
+                                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                        <div class="form-inline mt20">
+                            <label class="mr10">房间号是否必填</label>
+                            <label class="radio-inline">
+                                <input ng-disabled="data.EXPRESS.switch == 'NO'" ng-model="data.EXPRESS.isRoomRequired" type="radio" name="business-function-setting-details-necessary" value="FORCE" checked/> 必填
+                            </label>
+                            <label class="radio-inline">
+                                <input ng-disabled="data.EXPRESS.switch == 'NO'" ng-model="data.EXPRESS.isRoomRequired" type="radio" name="business-function-setting-details-necessary" value="SELF" /> 选填
+                            </label>
+                        </div>
+                        <div class="mt20">
+                            <button type="button" class="btn btn-info" ng-click="updateConfigTrigger('EXPRESS');">保存</button>
+                        </div>
+                    </div>
+                </pane>
+
+                <pane title="预约时间设置">
+                    <div class="mt20 well well-info" ng-controller="businessFunctionSettingDetailsTimeCtrl">
+                        <button ng-disabled="data.EXPRESS.switch == 'NO'" type="button" class="btn btn-info">添加</button>
+                        <div class="row">
+                            <div class="table-responsive mt20 col-sm-12">
+                                <table  class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>预约时间段</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="(index,value) in dataTime">
+                                            <td ng-bind="value.time"></td>
+                                            <td><a>修改</a> | <a href="">删除</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </pane>
+                <pane title="短信模板设置">
+                    <div class="mt20 well well-info">
+                        <button ng-disabled="data.EXPRESS.switch == 'NO'" type="button" class="btn btn-info">添加</button>
+
+                        <div class="row">
+                            <div class="table-responsive mt20 col-sm-6">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>短信模板名称</th>
+                                        <th>短信预览效果</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>a模板名称</td>
+                                        <td>模板内容...</td>
+                                        <td><a ui-sref="boss.business-function-setting-details">修改</a> | <a href="">删除</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </pane>
+                <pane title="快递公司设置">
+                    <div class="mt20 well well-info">
+                        <div class="row">
+                            <div class="table-responsive mt20 col-sm-6">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>快递公司</th>
+                                        <th>logo</th>
+                                        <th>结算单价</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">A快递
+                                            </label>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <input class="form-control" type="text" placeholder="0">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button ng-disabled="data.EXPRESS.switch == 'NO'" type="button" class="btn btn-info">添加</button>
+                    </div>
+                </pane>
+            </tabs>
+
+        </pane>
+        <pane title="送水业务">
+            <tabs class-name="nav nav-pills mt20">
+                <pane title="业务开关">
+                    <div class="well well-info mt20">
+                        <div class="checkbox mb20">
+                            <label>
+                                <input type="checkbox" ng-model="data.switch" value="0"> 业务开关
+                            </label>
+                        </div>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label class="mr10">运营方式</label>
+                                <select type="text" class="form-control" ng-model="data.operationMethod" ng-disabled="!data.switch">
+                                    <option value="2">支持预约配送</option>
+                                    <option value="1">强制自提</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-inline mt20">
+                            <label class="mr10">房间号是否必填</label>
+                            <label class="radio-inline">
+                                <input ng-model="data.isRoomRequired" type="radio" name="business-function-setting-details-necessary" value="1" checked/> 必填
+                            </label>
+                            <label class="radio-inline">
+                                <input ng-model="data.isRoomRequired" type="radio" name="business-function-setting-details-necessary" value="0" /> 选填
+                            </label>
+                        </div>
+                        <div class="mt20">
+                            <button type="button" class="btn btn-info">保存</button>
+                        </div>
+                    </div>
+                </pane>
+                <pane title="预约时间设置">
+                    <div class="mt20 well well-info">
+                        <button type="button" class="btn btn-info">添加</button>
+
+                        <div class="row">
+                            <div class="table-responsive mt20 col-sm-6">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>预约时间段</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>尽快配送</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9:00至10:00</td>
+                                        <td><a ui-sref="boss.business-function-setting-details">修改</a> | <a href="">删除</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </pane>
+                <pane title="短信模板设置">
+                    <div class="mt20 well well-info">
+                        <button ng-disabled="!data.switch" type="button" class="btn btn-info">添加</button>
+
+                        <div class="row">
+                            <div class="table-responsive mt20 col-sm-6">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>短信模板名称</th>
+                                        <th>短信预览效果</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>a模板名称</td>
+                                        <td>模板内容...</td>
+                                        <td><a ui-sref="boss.business-function-setting-details">修改</a> | <a href="">删除</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </pane>
+                <pane title="水卡设置">
+                    <div class="well well-info mt20">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control ui-select-width" placeholder="商品编号">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control ui-select-width" placeholder="商品名称">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control ui-select-width" placeholder="品牌名称">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control ui-select-width" placeholder="商品编号">
+                            </div>
+                        </div>
+
+                        <div class="form-inline mt20">
+                            <div class="form-group ui-select-width">
+                                <ui-select ng-model="statu.selected" >
+                                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="form-group ui-select-width">
+                                <ui-select ng-model="statu.selected" >
+                                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="form-group ui-select-width">
+                                <ui-select ng-model="statu.selected" >
+                                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-info">清空</button>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-info mr10">查询</button>
+                            </div>
+                        </div>
+
+                        <div class="mt20 mb10">
+                            <button type="button" class="btn btn-info" ui-sref="boss.business-function-setting-new-card">新增</button>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>商品编号</th>
+                                    <th>商品品牌</th>
+                                    <th>商品名称</th>
+                                    <th>业务类别</th>
+                                    <th>单位</th>
+                                    <th class="red">城市价/元</th>
+                                    <th class="red">押金/元</th>
+                                    <th>状态</th>
+                                    <th>创建时间</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>凯旋豪庭</td>
+                                    <td>北京</td>
+                                    <td>东城区</td>
+                                    <td>BJ00001</td>
+                                    <td>凯旋豪庭</td>
+                                    <td>北京</td>
+                                    <td>东城区</td>
+                                    <td>东城区</td>
+                                    <td>东城区</td>
+                                    <td><a href="">失效</a> <a ui-sref="boss.business-function-setting-card-details">详情</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </pane>
+            </tabs>
+        </pane>
+    </tabs>
+</div>

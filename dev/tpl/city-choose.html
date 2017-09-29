@@ -1,0 +1,110 @@
+<!-- header-->
+<ng-include src="'tpl/inc/header.html'"></ng-include>
+<style>
+    .set-top {
+        padding-top:100px;
+        background: #fff;}
+    .city-header{ background: linear-gradient(30deg,  #a197b0 0%,#fddbab 100%);
+        height:100px;padding-top:30px; box-sizing:border-box;}
+    .white { font-weight: normal;
+        }
+    .search-box {
+        position: relative;}
+    .drop-list {
+        position: absolute;
+        left:1px;
+        top:42px;
+        width:298px;
+        background: #fe7418;
+        /*display: none;*/
+
+
+    }
+    .drop-list>li a{
+        display: block;
+        line-height:40px;
+        text-align: left;
+        padding-left:15px; }
+    .drop-list>li a:hover{
+        background: #fff;
+        color: #cccaca;
+        text-decoration: none;
+        }
+    input[type=search]{
+        width:300px !important;}
+    h4 {
+        font-weight:normal; border-bottom: 1px solid #c39576; line-height: 40px; }
+
+    .nav-right h4 {
+        border-bottom-color: #d8cdc9;}
+    .current-city {
+        margin:28px 0 22px 0; }
+    .use-city{margin-bottom: 10px; }
+    .city-list { line-height: 30px;}
+    .city-list>span { margin-right:9px;
+        cursor: pointer;}
+    .cur{
+        color: #f0d8a7;
+        text-decoration: underline;}
+    .nav-right { padding: 24px;background: #fff;
+         }
+    .nav-left{
+        width:275px; padding:24px; background:#f5f5f5; box-sizing: border-box;
+        padding-bottom:250px;
+    }
+    .website-list {
+        width:795px;
+        margin-right:-25px;}
+    .website-list li{
+        float: left;
+        margin-right:25px;
+        margin-top:20px;}
+    .website-list li a {
+        display: block;
+        width:134px;
+        height:36px;
+        background: #f5f5f5;
+        text-align: center;
+        line-height:36px;
+        border-radius: 10px;}
+    .active{
+        color: #d4b677;}
+</style>
+<section class="set-top" ng-controller="cityChoose">
+<header class="city-header">
+    <div class="form-group form-inline text-center">
+        <label class="control-label white">网点选择：</label>
+
+        <div class="input-group search-box">
+            <ul class="drop-list" ng-show="key">
+                <li ng-repeat="item in dataList|filter:key">
+                    <a ui-sref="{{item.href}}">{{item.title}}</a>
+                </li>
+            </ul>
+            <input type="search" class="form-control" placeholder="网点名称/拼音" ng-model="key" ng-blur="hide()">
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="button">确定</button>
+            </span>
+
+        </div>
+    </div>
+</header>
+    <div class="clearfix">
+        <nav class="nav-left fl">
+            <h4>全国城市选择：</h4>
+            <div class="current-city">当前城市：<span class="cur" ng-model="curName">{{curName}}</span></div>
+            <div class="use-city">常用城市：</div>
+            <div class="city-list">
+                <span  ng-repeat="item in data" ng-click="addList($index)" ng-init="addList(0)" ng-class="{active:$index==index}">{{item.title}}</span>
+            </div>
+        </nav>
+        <nav class="nav-right fl">
+            <h4>选择网点：</h4>
+            <ul class="website-list clearfix">
+                <!--<li class="active"><a ui-sref="business.express-getin">华纺易城</a></li>-->
+                <!--<li><a ui-sref="business.express-getin">华纺易城</a></li>-->
+                <li ng-repeat="item in dataList"><a ui-sref="{{item.href}}">{{item.title}}</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>

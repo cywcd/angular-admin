@@ -1,0 +1,171 @@
+<div class="express-dealt p15" ng-controller="expressCheckCtrl">
+    <unfinished-order></unfinished-order>
+
+    <div class="row">
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">快递公司</label>
+            <div class="col-sm-8">
+                <ui-select ng-model="status.selected" ng-disabled="data.EXPRESS.switch == 'NO'" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-5 control-label">签收账号</label>
+            <div class="col-sm-7">
+                <ui-select ng-model="status.selected" ng-disabled="data.EXPRESS.switch == 'NO'" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">分区</label>
+            <div class="col-sm-8">
+                <ui-select ng-model="status.selected" ng-disabled="data.EXPRESS.switch == 'NO'" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">签收类型</label>
+            <div class="col-sm-8">
+                <ui-select ng-model="status.selected" ng-disabled="data.EXPRESS.switch == 'NO'" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-5 control-label">包裹状态</label>
+            <div class="col-sm-7">
+                <ui-select ng-model="status.selected" ng-disabled="data.EXPRESS.switch == 'NO'" >
+                    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices  repeat="item in status | filter: $select.search">
+                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">入库时间</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-1 control-label">至</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">签收时间</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-1 control-label">至</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 form-horizontal form-group">
+            <label class="col-sm-4 control-label">搜索</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4 form-horizontal form-group">
+            <div class="col-sm-8">
+                <button type="button" class="btn btn-info">查询</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-info mb20">数据导出</button>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>快递单号</th>
+                <th>快递公司</th>
+                <th>收件人手机号</th>
+                <th>房间号</th>
+                <th>分区</th>
+                <th>包裹状态</th>
+                <th>入库时间</th>
+                <th>预约时间</th>
+                <th>签收账号</th>
+                <th>签收时间</th>
+                <th>签收类型</th>
+                <th>查看</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>BJ00001</td>
+                <td>凯旋豪庭</td>
+                <td>北京</td>
+                <td>东城区</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>2</td>
+                <td>旗舰店</td>
+                <td>已运营</td>
+                <td>北京市西城区金融街188号</td>
+                <td>4</td>
+                <td><a ui-sref="boss.organization-network-detail">查看设置</a> <a ui-sref="boss.organization-network-deployed">人员调派</a></td>
+            </tr>
+            <tr>
+                <td>BJ00001</td>
+                <td>凯旋豪庭</td>
+                <td>北京</td>
+                <td>东城区</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>2</td>
+                <td>旗舰店</td>
+                <td>已运营</td>
+                <td>北京市西城区金融街188号</td>
+                <td>4</td>
+                <td><a ui-sref="boss.organization-network-detail">查看设置</a> <a ui-sref="boss.organization-network-deployed">人员调派</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </form>
+
+
+</div>

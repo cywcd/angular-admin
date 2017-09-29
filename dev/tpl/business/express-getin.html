@@ -1,0 +1,23 @@
+<div class="express-getin p15" ng-controller="expressGetInCtrl">
+    <unfinished-order></unfinished-order><br>
+    <button class="btn btn-info mb20">入库</button>
+    <hot-table settings="{
+               colHeaders: colHeaders,
+               contextMenu: ['row_above', 'row_below', 'remove_row'],
+               afterChange: afterChange,
+               }"
+               row-headers="true"
+               min-spare-rows="minSpareRows"
+               hotInstance = "bindedInstance"
+               datarows="db.items">
+        <hot-column data="id" title="'快递单号'"></hot-column>
+        <hot-column data="name.description" title="'快递公司'" type="'autocomplete'">
+            <hot-autocomplete datarows="description in name.options"></hot-autocomplete>
+        </hot-column>
+        <hot-column data="address" title="'分区'"></hot-column>
+        <hot-column data="phone" title="'收件人号码'" width="150"></hot-column>
+        <hot-column data="room" title="'房间号'">
+        </hot-column>
+        <hot-column data="whyFailed" title="'入库失败反馈'"></hot-column>
+    </hot-table>
+</div>
